@@ -1,0 +1,38 @@
+
+# Archivos de Máquinas Virtuales (VMware / VirtualBox)
+*.vmdk
+*.vmem
+*.vmsd
+*.vmsn
+*.vmss
+*.nvram
+*.iso
+*.ova
+*.ovf
+*.log
+
+# Capturas de Red Pesadas
+*.pcap
+*.pcapng
+*.cap
+
+# Archivos Sensibles y Credenciales
+*.pem
+*.key
+*.pfx
+*.crt
+id_rsa*
+.env
+
+# Entornos de Desarrollo / Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.vscode/
+.idea/
+
+# Archivos del Sistema Operativo
+Thumbs.db
+Desktop.ini
+.DS_Store
