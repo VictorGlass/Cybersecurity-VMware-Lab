@@ -1,4 +1,5 @@
 ## 03. Enumeracióm de Servicios (FTP, SSH, HTTP, SMTP, SMB, MySQL)
+<br></br>
 
 ### Características
 
@@ -12,16 +13,17 @@
 
 **IP Objetivo:** `192.168.192.128`
 
----
 
+
+<br></br>
 ## 🎯 Objetivos
 
 - Extraer información detallada y configuraciones de cada uno de los servicios críticos expuestos
 - Identificar usuarios del sistema, rutas web ocultas, recursos compartidos y accesos anónimos o por defecto
 
 
----
 
+<br></br>
 ## Enumeración de Servicios (FTP, SSH, HTTP, SMTP, SMB, MySQL)
 
 En este proyecto profundizaremos en cada protocolo expuesto por **Metasploitable2**
@@ -32,8 +34,8 @@ Mientras que en los proyectos 01 y 02 solo vimos que puertos estaban abiertos y 
 - recursos compartidos
 - estructuras de directorios
 - accesos anónimos
+<br></br>
 
----
 
 
 ## 1. Enumeracion de FTP(Puerto 21)
@@ -66,6 +68,7 @@ Connected to 192.168.192.128: Aquí el reporte de Nmap nos muestra que el servid
 ```
 
 
+<br></br>
 ## 2. Enumeración de SSH(Puerto 22)
 
 Identificaremos los métodos de autenticación soportados y algoritmos aceptados
@@ -86,7 +89,7 @@ Por ejemplo, métodos como **password** habilitados y cifrados obsoletos o débi
 
 
 
-
+<br></br>
 ## 3. Enumeración de HTTP(Puerto 80) Usando Gobuster
 
 Ahora descubriremos páginas ocultas, rutas de administración y ejecutaremos un análisis web clásico
@@ -123,7 +126,7 @@ Nos permite la interacción con archivos mediante HTTP
 .htaccess: Nos devuelve un código 403 Forbidden, lo que nos valida que el archivo de configuración del servidor web existe y bloquea el acceso directo
 ```
 
-
+<br></br>
 ## 3. Enumeración de HTTP(Puerto 80) Usando Nitko
 
 Ahora realizaremos un escaneo de vulnerabilidades automatizado con **Nitko** centrado en la configuración del servidor web Apache y las cabeceras HTTP
@@ -153,7 +156,7 @@ nitko -h http://192.168.192.128
 * Falta de Cabeceras de Seguridad: El sitio no protege a los usuarios contra ataques comunes como robo de clics (Clickjacking) o inyección de scripts (XSS).
 
 
-
+<br></br>
 ## 4. Enumeración de SMTP(Puerto 25)
 
 Ahora vamos a realizar una comprobación para ver si el servidor permite enumerar usuarios válidos del sistema operativo mediante comandos **VRFY**
@@ -181,7 +184,7 @@ Esto ocurre porque ell servidor SMTP de Metasploitable2 respondio con un codigo 
 A pesar del fallo del script automatizado de Nmap, la presencia confirmada de **VRFY** en las cabeceras significa que la enumeración de usuarios sigue siendo viable de forma manual o tambien utilizando herramientas alternativas
 
 
-
+<br></br>
 ## 5. Enumeración de SMB(Puertos 139 / 445)
 
 SMB (Server Message Block) suele ser una de las mayores fuentes de información en auditorías Linux/Windows
@@ -215,9 +218,9 @@ Si nuestro comando tiene éxito, nos mostrará un listado de nombres de las carp
 
 ### 🔎 Haber que encontramos
 
-**Anonymous login successful**: El servidor nos permite el acceso sin autenticación
+* Anonymous login successful: El servidor nos permite el acceso sin autenticación
 
-**tmp, opt**: Pudimos identificar directorios del sistema accesibles de forma anónima
+* tmp, opt: Pudimos identificar directorios del sistema accesibles de forma anónima
 
 
 El banner nos confirma el uso de **Samba 3.0.20-Debian**
@@ -225,7 +228,7 @@ El banner nos confirma el uso de **Samba 3.0.20-Debian**
 Esta versión específica posee una vulnerabilidad crítica muy conocida de ejecución remota de comandos (RCE)
 
 
-
+<br></br>
 
 ### Sigamos con la Enumeración automatizada completa de SMB
 
@@ -265,7 +268,7 @@ Esto ha expuesto una lista de 35 cuentas legítimas del sistema operativo, elimi
 De igual forma, cuentas claves como **root**, **msfadmin** y **user** quedan completamente expuestas
 
 
-
+<br></br>
 ## 6. Enumeración de MySQL(Puerto 3306)
 
 Verificaremos si la DB permite conexiones remotas e intentaremos con credenciales por defecto **root sin contraseña**
@@ -292,7 +295,7 @@ El escaneo nos revela una version muy obsoleta de MySQL expuesta remotamente, es
 
 Aunque no se detectaron contraseñas vacias
 
-
+<br></br>
 ## 🧠 Lecciones Aprendidas y Remediación
 
 - **Riesgo**: La enumeración exitosa le proporciona al atacante un mapa exacto de nombres de usuarios reales y rutas para inciar ataques de fuerza bruta o explotación directa
