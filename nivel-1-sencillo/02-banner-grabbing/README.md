@@ -149,7 +149,7 @@ En el resultado que arroja el comando, podemos ver la cabecera **Server** y sus 
 
 * Riesgo: El **Banner Disclosure** facilita al atacante la busqueda exacta de exploits en base de datos como Searchsploit o Exploit-DB
 
-* Remediacion (Hardening):+
+* Remediacion (Hardening):
 
    ◇ Ocultar cabeceras en servidores web (SeverSignature Off y ServerTokens Prod en Apache)
 
