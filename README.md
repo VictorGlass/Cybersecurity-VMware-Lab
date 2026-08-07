@@ -18,7 +18,7 @@ El entorno está compuesto por tres máquinas virtuales alojadas en disco local:
 ### 🟢 Nivel 1 - Sencillo
 - [x] **01.** Reconocimiento de red con Nmap
 - [x] **02.** Banner Grabbing
-- [ ] **03.** Enumeración de servicios (FTP, SSH, HTTP, SMTP, SMB, MySQL)
+- [x] **03.** Enumeración de servicios (FTP, SSH, HTTP, SMTP, SMB, MySQL)
 - [ ] **04.** Captura de tráfico con Wireshark
 - [ ] **05.** Administración básica de Ubuntu
 - [ ] **06.** Bash Scripting
