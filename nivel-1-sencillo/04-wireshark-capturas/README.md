@@ -12,7 +12,7 @@
 
 **IP Objetivo:** `192.168.192.128`
 
----
+<br></br>
 
 ## 🎯 Objetivos
 
@@ -21,7 +21,7 @@
 - Etraer credenciales transmitidas en texto plano mediante la inspección de flujos TCP (`TCP Stream`)
 
 
----
+<br></br>
 
 ## Captura de Tráfico con Wireshark
 
@@ -29,7 +29,7 @@ En este laboratorio vamos a pasar de la persepctiva del atacante a la del **Anal
 
 Utilizaremos **Wireshark** en Kali Linux para capturar llos paquetes de red mientras interactuamos con **Metasploitable2**, demostrando en la práctica por qué los protocolos que no usan cifrado (como FTP, HTTP o Telnet) exponen credenciales en texto plano a cualquiera que esté escuchando el tráfico
 
-
+<br></br>
 
 ## Iniciamos la Captura en Wireshark
 
@@ -49,13 +49,14 @@ Solo hacemos doble clic sobre la interfaz para iniciar la captura de paquetes en
 <img src="./assets/_2.png" alt="">
 
 
-
+<br></br>
 
 ### 2. Generemos Tráfico e Interacciones
 
 
 Abriremos una nueva pestaña en la terminal de Kali Linux y realizaremos las siguientes pruebas contra **Metasploitable2**
 
+<br></br>
 
 ### Prueba A: Inicio de Sesión por FTP(Texto Plano)
 
@@ -68,7 +69,7 @@ ftp 192.168.192.128
 
 Una vez dentro, podemos ejecutar algo simple como: **ls** y si queremos salir usamos **quit**
 
-
+<br></br>
 
 ### Prueba B: Petición HTTP/ Formulario Web
 
@@ -81,13 +82,13 @@ curl -d "username=admin&password=SuperPassword123" -X POST http://192.168.192.12
 <img src="./assets/_4.png" alt="">
 
 
-
+<br></br>
 
 ## Inspeccionar y Filtrar Paquetes en Wireshark
 
 Ahora regresamos a la ventana de **Wireshark**, haremos clic en el boton rojo de Stop y aplicamos los siguientes filtros de visualización en la barra superior
 
-
+<br></br>
 
 ### Filtramos Tráfico FTP
 
@@ -104,12 +105,13 @@ Ya localizado, buscamos las filas con la columna info que digan lo siguiente: **
 
 <img src="./assets/tcp2.png" alt="">
 
+<br></br>
 
 ### Resultado
 
 Podemos ver que se abre una ventana que nos muestra la conversacion completa entre Kali y Metasploitable2 en texto claro, revelando el usuario y la contraseña sin encrtiptar
 
-
+<br></br>
 
 ### Filtramos HTTP POST
 
@@ -131,7 +133,7 @@ Ahora despliegamos en el panel inferior la seccion HTML Form URL Encoded
 
 Podemos ver claramente las variables enviadas por la red **(username y password)** expuestas directamente
 
-
+<br></br>
 
 ## 🧠 Lecciones Aprendidas y Remediación
 
