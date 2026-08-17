@@ -20,7 +20,7 @@ El entorno está compuesto por tres máquinas virtuales alojadas en disco local:
 - [x] **02.** Banner Grabbing
 - [x] **03.** Enumeración de servicios (FTP, SSH, HTTP, SMTP, SMB, MySQL)
 - [x] **04.** Captura de tráfico con Wireshark
-- [ ] **05.** Administración básica de Ubuntu
+- [x] **05.** Administración básica de Ubuntu
 - [ ] **06.** Bash Scripting
 - [ ] **07.** Herramientas básicas de pentesting en Python
 
