@@ -8,7 +8,7 @@
 
 **Sistema Operativo:** Ubuntu Server
 
-**Herramientas Utilizada:** `useradd`, `usermod`, `chmod`, `chown`, `systemctl`, `journarlctl`, ``grep`
+**Herramientas Utilizada:** `useradd`, `usermod`, `chmod`, `chown`, `systemctl`, `journarlctl`, `grep`
 
 ---
 
